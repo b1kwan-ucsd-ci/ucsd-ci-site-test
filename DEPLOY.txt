@@ -7,16 +7,50 @@ WHAT THIS IS
   Password: ucsdcisite
 
 DEPLOY ON GITHUB PAGES (free, no other accounts)
-  1. Go to github.com -> New repository (e.g. "ci-fellowship-preview").
-     Set it to Public (Pages is free on public repos) and create it.
-  2. On the repo page: "Add file" -> "Upload files". Drag in EVERYTHING
-     inside this preview/ folder: the 5 .html files, image-slot.js, and the
-     assets/ folder (keep the folder structure). Commit.
-  3. Settings -> Pages. Under "Build and deployment", Source = "Deploy from
-     a branch", Branch = "main", folder = "/ (root)". Save.
-  4. Wait ~1 minute, then reload the Pages settings page. It shows your URL:
-     https://<your-username>.github.io/ci-fellowship-preview/
-  5. Share that URL + the password with reviewers.
+
+  STEP 1 - CREATE THE REPOSITORY
+    a. Sign in at github.com (create a free account if you don't have one).
+    b. Click the "+" icon at the top-right -> "New repository".
+    c. Repository name: ci-fellowship-preview  (any name is fine).
+    d. Leave it set to "Public". (Pages is free on public repos. The files
+       are encrypted, so public hosting is safe.)
+    e. Do NOT check "Add a README" - keep it empty.
+    f. Click "Create repository".
+
+  STEP 2 - UPLOAD THE FILES
+    a. First, UNZIP the file you downloaded so you can see the loose files
+       (the 5 .html files, image-slot.js, DEPLOY.txt, and the assets folder).
+    b. On the new empty repo page, find the line "uploading an existing file"
+       and click it.  (Or click "Add file" -> "Upload files".)
+    c. Open the unzipped "preview" folder on your computer, select ALL of its
+       contents (Ctrl+A / Cmd+A), and DRAG them onto the upload area in the
+       browser.  IMPORTANT: drag the CONTENTS of the folder, not the folder
+       itself - the .html files must sit at the top level of the repo, with
+       the "assets" folder beside them.  GitHub preserves the assets/ subfolder
+       automatically.
+    d. Wait for every file to finish uploading (you'll see them listed,
+       including "assets/..." entries).
+    e. Scroll down to "Commit changes" and click the green "Commit changes"
+       button.
+
+  STEP 3 - TURN ON GITHUB PAGES
+    a. In the repo, click the "Settings" tab (top-right of the repo menu).
+    b. In the left sidebar, click "Pages".
+    c. Under "Build and deployment" -> "Source", choose "Deploy from a branch".
+    d. Under "Branch", change "None" to "main".  Leave the folder as "/ (root)".
+    e. Click "Save".
+
+  STEP 4 - GET YOUR LINK
+    a. Stay on the Pages settings screen and wait about 1-2 minutes.
+    b. Refresh the page. A banner appears: "Your site is live at
+       https://<your-username>.github.io/ci-fellowship-preview/".
+    c. Click "Visit site" to test it - you should see the password screen.
+       Enter the password (ucsdcisite) to confirm the site loads.
+    d. Share that URL and the password with your reviewers.
+
+  UPDATING LATER
+    To change content or the password, ask me to regenerate the preview,
+    then repeat STEP 2 (Add file -> Upload files) to replace the files.
 
 NOTES
   - The password is remembered per browser tab (session), so reviewers only
