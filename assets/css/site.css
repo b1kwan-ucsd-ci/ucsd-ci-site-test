@@ -71,9 +71,9 @@ img{display:block;max-width:100%}
 
 /* ------------------ nav ------------------ */
 nav.main{
-  position:relative;z-index:5;
+  position:sticky;top:0;z-index:20;
   border-bottom:1px solid var(--line);
-  background:rgba(7,11,24,0.5);
+  background:rgba(7,11,24,0.72);
   backdrop-filter:blur(12px);
 }
 .nav-inner{max-width:var(--max);margin:0 auto;padding:18px var(--content-pad);display:flex;align-items:center;justify-content:space-between;gap:32px}
@@ -496,6 +496,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;font-size:13px;color
 @media (max-width: 1100px) {
   .hero, .page-hero-row, .two-col, .two-col.even, .two-col.text-first, .chi-grid, .apply-inner{grid-template-columns:1fr}
   .fac-grid, .card-grid.cols-4{grid-template-columns:repeat(2,1fr)}
+  .card-grid.cols-3{grid-template-columns:repeat(2,1fr)}
   .blocks{grid-template-columns:repeat(6,1fr)}
   .kpi-strip{grid-template-columns:repeat(2,1fr)}
   .kpi{border-bottom:1px solid var(--line)}
@@ -504,5 +505,52 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;font-size:13px;color
   .hero h1, .page-hero h1{font-size:48px}
   .section-head{flex-direction:column;align-items:start;gap:18px}
   .section-head h2{font-size:32px}
-  .nav-links{display:none}
+}
+
+/* nav: wrap links onto a scrollable second row instead of vanishing */
+@media (max-width: 940px) {
+  .nav-inner{flex-wrap:wrap;gap:14px 20px}
+  .brand{flex:1;min-width:0}
+  .nav-cta{flex-shrink:0}
+  .nav-links{order:3;width:100%;gap:22px;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-top:13px;margin-top:2px;border-top:1px solid var(--line);white-space:nowrap;font-size:13.5px;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links .active::after{bottom:-13px}
+}
+
+/* phone */
+@media (max-width: 640px) {
+  :root{--content-pad:18px;--pad-y:56px}
+  .fac-grid, .card-grid.cols-2, .card-grid.cols-3, .card-grid.cols-4{grid-template-columns:1fr}
+  .blocks{grid-template-columns:repeat(4,1fr)}
+  .kpi-strip{grid-template-columns:1fr}
+  .kpi{border-right:none !important;padding:20px 4px}
+  .kpi:last-child{border-bottom:none}
+  .kpi .n{font-size:30px}
+  .hero{padding-top:40px;gap:40px}
+  .hero h1{font-size:36px;margin-bottom:20px}
+  .hero p.lede{font-size:16px;margin-bottom:28px}
+  .hero-meta{grid-template-columns:repeat(2,1fr);gap:20px 18px;max-width:none}
+  .hero-ctas{gap:10px}
+  .hero-ctas .btn{flex:1;justify-content:center}
+  .page-hero{padding-top:40px}
+  .page-hero h1{font-size:34px}
+  .page-hero p.lede{font-size:15.5px}
+  .page-hero .right-meta{margin-top:8px}
+  .section-head h2{font-size:26px}
+  .apply{margin:40px var(--content-pad) 56px;padding:36px 24px}
+  .apply h2{font-size:32px}
+  .apply-meta .r{grid-template-columns:96px 1fr}
+  .foot{grid-template-columns:1fr 1fr;gap:28px 24px}
+  .foot-bottom{flex-direction:column;gap:10px}
+  .prose .lead{font-size:17px}
+  .prose h3{font-size:19px}
+  .ascii-box{padding:18px 16px;font-size:11px;line-height:1.6}
+  .ascii-box .h{margin-bottom:8px}
+  .terminal-body{min-height:340px;font-size:11.5px}
+  .btn.lg{padding:12px 18px}
+}
+
+@media (max-width: 420px) {
+  .foot{grid-template-columns:1fr}
+  .hero h1{font-size:31px}
 }
