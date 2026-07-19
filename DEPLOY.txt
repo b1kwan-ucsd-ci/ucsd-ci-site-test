@@ -1,0 +1,26 @@
+UC San Diego CI Fellowship — Password-protected preview
+=======================================================
+
+WHAT THIS IS
+  The five pages in this folder are AES-encrypted. Nobody can read the
+  content without the password, even though the files are hosted publicly.
+  Password: ucsdcisite
+
+DEPLOY ON GITHUB PAGES (free, no other accounts)
+  1. Go to github.com -> New repository (e.g. "ci-fellowship-preview").
+     Set it to Public (Pages is free on public repos) and create it.
+  2. On the repo page: "Add file" -> "Upload files". Drag in EVERYTHING
+     inside this preview/ folder: the 5 .html files, image-slot.js, and the
+     assets/ folder (keep the folder structure). Commit.
+  3. Settings -> Pages. Under "Build and deployment", Source = "Deploy from
+     a branch", Branch = "main", folder = "/ (root)". Save.
+  4. Wait ~1 minute, then reload the Pages settings page. It shows your URL:
+     https://<your-username>.github.io/ci-fellowship-preview/
+  5. Share that URL + the password with reviewers.
+
+NOTES
+  - The password is remembered per browser tab (session), so reviewers only
+    type it once while clicking between pages.
+  - To CHANGE the password later, ask me to regenerate the preview.
+  - This is a static preview. Edits you make to the real site files will NOT
+    appear here until I regenerate the preview folder.
