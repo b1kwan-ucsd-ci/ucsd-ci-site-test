@@ -30,6 +30,17 @@
 .hero .terminal{font-size:11.5px;line-height:1.5}
 .hero .terminal-body{min-height:0;padding:14px 18px}
 @media(max-width:1100px){.hero-logo{max-width:430px;align-self:center}}
+/* ---- Hero layout: headline left, logo fills the space to its right ---- */
+.hero-c .hero-left,.hero-c .hero-right{display:contents}
+.hero-c.hero{grid-template-columns:1.5fr 1fr;column-gap:28px;row-gap:0}
+.hero-c .hero-eyebrow{grid-column:1;grid-row:1}
+.hero-c h1{grid-column:1;grid-row:2;font-size:56px}
+.hero-c .hero-logo{display:block;grid-column:2;grid-row:1/3;justify-self:end;align-self:center;max-width:360px;max-height:220px;object-fit:contain;margin:0;border:1px solid var(--line-strong);border-radius:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,0.6),0 0 0 1px rgba(255,205,0,0.05)}
+.hero.hero-c p.lede{grid-column:1;grid-row:3;align-self:start;margin-top:34px;font-size:21px;line-height:1.6;max-width:60ch;color:var(--text)}
+.hero-c .hero-ctas{grid-column:1;grid-row:4}
+.hero-c .hero-meta{grid-column:1;grid-row:5;margin-top:auto}
+.hero-c .terminal{grid-column:2;grid-row:3/6;align-self:start;margin-top:34px}
+@media(max-width:1100px){.hero-c.hero{grid-template-columns:1fr}.hero-c h1{font-size:46px}.hero-c .hero-logo{justify-self:start;max-width:340px}.hero-c .hero-eyebrow,.hero-c h1,.hero-c .hero-logo,.hero-c .lede,.hero-c .hero-ctas,.hero-c .hero-meta,.hero-c .terminal{grid-column:1;grid-row:auto}}
 </style>
 </head>
 <body data-screen-label="01 Home">
@@ -78,7 +89,7 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero hero-c">
   <div class="hero-left">
     <img src="assets/cf-patch.jpg" alt="UCSD Clinical Informatics Fellowship" class="hero-logo">
     <p class="lede">A rigorously-structured clinical informatics fellowship embedded in one of the country's most active health-AI research environments. Build production EHR systems. Lead implementation science. Ship AI/ML in real clinical workflows.</p>
@@ -274,10 +285,26 @@
   </div>
   <div class="foot-bottom">
     <div>© 2026 The Regents of the University of California</div>
-    <div>// build · v3.0.1 · last updated 2026.05.26</div>
+    <div>// build · v3.0.1 · last updated 2026.07.22</div>
   </div>
 </footer>
 
+<!-- HERO LAYOUT TOGGLE (comparison control) -->
+<div class="layout-toggle" role="group" aria-label="Hero layout">
+  <span class="lt-lbl">// hero</span>
+  <button type="button" data-layout="a">Logo-left</button>
+  <button type="button" data-layout="c">Logo-right</button>
+  <button type="button" data-layout="b">Headline-first</button>
+</div>
+<script>(function(){var hero=document.querySelector('.hero'),btns=document.querySelectorAll('.layout-toggle button');function set(v){hero.classList.toggle('hero-b',v==='b');hero.classList.toggle('hero-c',v==='c');btns.forEach(function(b){b.classList.toggle('on',b.dataset.layout===v);});try{localStorage.setItem('ci_hero_layout',v);}catch(e){}}btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.layout);});});var saved='a';try{saved=localStorage.getItem('ci_hero_layout')||'a';}catch(e){}set(saved);})();</script>
+<!-- HERO LAYOUT TOGGLE (comparison control) -->
+<div class="layout-toggle" role="group" aria-label="Hero layout">
+  <span class="lt-lbl">// hero</span>
+  <button type="button" data-layout="a">Logo-left</button>
+  <button type="button" data-layout="c">Logo-right</button>
+  <button type="button" data-layout="b">Headline-first</button>
+</div>
+<script>(function(){var hero=document.querySelector('.hero'),btns=document.querySelectorAll('.layout-toggle button');function set(v){hero.classList.toggle('hero-b',v==='b');hero.classList.toggle('hero-c',v==='c');btns.forEach(function(b){b.classList.toggle('on',b.dataset.layout===v);});try{localStorage.setItem('ci_hero_layout',v);}catch(e){}}btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.layout);});});var saved='a';try{saved=localStorage.getItem('ci_hero_layout')||'a';}catch(e){}set(saved);})();</script>
 <script>(function(){var f=document.querySelectorAll('.sd-rotator .rot-frame');if(f.length>1){var i=0;setInterval(function(){f[i].classList.remove('active');i=(i+1)%f.length;f[i].classList.add('active');},3500);}})();</script>
 <script src="assets/js/tweaks.js"></script>
 </body>
