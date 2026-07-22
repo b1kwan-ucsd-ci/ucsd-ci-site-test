@@ -1,61 +1,359 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>About — UC San Diego Clinical Informatics Fellowship</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#0a1024;--navy2:#0d1530;--line:rgba(255,255,255,0.1);--gold:#ffcd00;--text:#e6ebf5;--dim:#8290ad}
-*{box-sizing:border-box}html,body{height:100%}
-body{margin:0;background:radial-gradient(1200px 700px at 70% -10%,#12203f 0%,var(--navy) 55%);color:var(--text);font-family:Inter,system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:24px}
-.card{width:100%;max-width:420px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--line);border-radius:14px;padding:38px 34px}
-.eye{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold)}
-h1{font-size:20px;font-weight:600;margin:14px 0 6px;letter-spacing:-0.01em}
-p.sub{margin:0 0 26px;color:var(--dim);font-size:13.5px;line-height:1.55}
-label{display:block;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);margin-bottom:9px}
-.row{display:flex;gap:10px}
-input{flex:1;background:rgba(0,0,0,0.25);border:1px solid var(--line);border-radius:8px;color:var(--text);padding:12px 14px;font-size:15px;font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;outline:none}
-input:focus{border-color:var(--gold)}
-button{background:var(--gold);color:#0a1024;border:none;border-radius:8px;padding:0 20px;font-weight:700;font-size:14px;cursor:pointer;font-family:Inter,sans-serif}
-button:hover{filter:brightness(1.06)}
-.err{color:#ff8a8a;font-size:12.5px;margin-top:14px;min-height:16px;font-family:'JetBrains Mono',monospace}
-.foot{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:11.5px;color:var(--dim);line-height:1.5}
-</style></head>
-<body>
-<div class="card" id="card">
-  <div class="eye">// Confidential preview</div>
-  <h1>UC San Diego CI Fellowship</h1>
-  <p class="sub">This site is a draft under review. Enter the access password to continue.</p>
-  <form id="f" autocomplete="off">
-    <label for="pw">Access password</label>
-    <div class="row"><input id="pw" type="password" autofocus autocomplete="off" spellcheck="false"><button type="submit">Enter</button></div>
-    <div class="err" id="err"></div>
-  </form>
-  <div class="foot">Please don't share this link or password outside the review group.</div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>About — UC San Diego Clinical Informatics Fellowship</title>
+<meta name="description" content="The program, accreditation, institutional context, and graduate outcomes of the UCSD Clinical Informatics Fellowship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-screen-label="02 About">
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span><span class="pulse"></span><span class="k">status</span> <span class="v">recruiting · AY 2026–27</span></span>
+      <span><span class="k">cohort</span> <span class="v">2 positions / yr</span></span>
+      <span><span class="k">match</span> <span class="v">AMIA · ERAS</span></span>
+    </div>
+    <div class="topbar-right">
+      <span><span class="k">UCSD Health</span></span>
+      <span><span class="k">Dept. of Emergency Medicine</span></span>
+      <span><span class="k">v3.0</span> <span class="v">2026</span></span>
+    </div>
+  </div>
 </div>
-<script>
-var BLOB="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";
-function u8(b64){return Uint8Array.from(atob(b64),function(c){return c.charCodeAt(0);});}
-async function decrypt(pw){
-  var raw=u8(BLOB),salt=raw.slice(0,16),iv=raw.slice(16,28),data=raw.slice(28),e=new TextEncoder();
-  var bk=await crypto.subtle.importKey('raw',e.encode(pw),'PBKDF2',false,['deriveKey']);
-  var key=await crypto.subtle.deriveKey({name:'PBKDF2',salt:salt,iterations:150000,hash:'SHA-256'},bk,{name:'AES-GCM',length:256},false,['decrypt']);
-  var pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:iv},key,data);
-  return new TextDecoder().decode(pt);
-}
-async function attempt(pw,fromForm){
-  try{
-    var html=await decrypt(pw);
-    sessionStorage.setItem('ci_preview_pw',pw);
-    document.open();document.write(html);document.close();
-    return true;
-  }catch(e){
-    if(fromForm){document.getElementById('err').textContent='Incorrect password. Try again.';}
-    sessionStorage.removeItem('ci_preview_pw');
-    return false;
-  }
-}
-(function(){
-  var saved=sessionStorage.getItem('ci_preview_pw');
-  if(saved){attempt(saved,false);}
-  document.getElementById('f').addEventListener('submit',function(ev){ev.preventDefault();document.getElementById('err').textContent='';attempt(document.getElementById('pw').value,true);});
-})();
-</script>
-</body></html>
+
+<nav class="main">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/cf-patch.jpg" alt="UCSD Clinical Informatics Fellowship">
+      <div class="brand-text">
+        <div class="l1">UC San Diego School of Medicine</div>
+        <div class="l2">Clinical Informatics Fellowship</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="people.html">People</a>
+      <a href="research.html">Research</a>
+      <a href="san-diego.html">Life in SD</a>
+      <a href="apply.html">Apply</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn primary" href="apply.html">Apply via ERAS <span class="arr">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-row">
+    <div>
+      <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>About the program</span></div>
+      <h1>A clinical informatics fellowship built like <span class="serif">an engineering discipline,</span> grounded in <span class="accent">clinical practice.</span></h1>
+      <p class="lede">A two-year ACGME-accredited subspecialty program for physicians from any ABMS specialty &mdash; housed in Emergency Medicine, built across the full UC San Diego Health enterprise, and taught by the people who run informatics here. You graduate board-eligible and ready to lead.</p>
+    </div>
+    <div class="right-meta">
+      <div class="r"><div class="k">Accreditation</div><div class="v">ACGME</div></div>
+      <div class="r"><div class="k">Boards</div><div class="v">ABPM</div></div>
+      <div class="r"><div class="k">Duration</div><div class="v">2 years</div></div>
+      <div class="r"><div class="k">Hosting dept.</div><div class="v">Emergency Medicine</div></div>
+      <div class="r"><div class="k">Affiliations</div><div class="v">CHI · DBMI · CHC · UCSD Health IS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- KPI strip -->
+<div class="container">
+  <div class="kpi-strip">
+    <div class="kpi">
+      <div class="n">2</div>
+      <div class="l">Fellows per year</div>
+      <div class="d">A deliberately small cohort — you're known from week one.</div>
+    </div>
+    <div class="kpi">
+      <div class="n">3</div>
+      <div class="l">Acute care hospitals</div>
+      <div class="d">Jacobs (La Jolla), Hillcrest, East Campus.</div>
+    </div>
+    <div class="kpi">
+      <div class="n">40</div>
+      <div class="l">Outpatient sites</div>
+      <div class="d">Ambulatory reach across San Diego County.</div>
+    </div>
+    <div class="kpi">
+      <div class="n">Any</div>
+      <div class="l">ABMS specialty</div>
+      <div class="d">Open to physicians from any primary residency.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION 01 — Program -->
+<section class="curr" style="padding-bottom:80px">
+  <div class="container">
+    <div class="section-ribbon"><span class="n">§01</span> <span class="label">The program</span></div>
+
+    <div class="two-col">
+      <div>
+        <h2 style="font-size:36px;line-height:1.1;font-weight:600;letter-spacing:-0.02em;margin:0 0 24px">
+          We train physicians to be <span class="serif">builders</span>, <span class="serif">leaders</span>, and <span class="serif">scientists</span> of clinical software systems.
+        </h2>
+        <div class="prose">
+          <p class="lead">The UC San Diego Clinical Informatics Fellowship is a two-year ACGME-accredited subspecialty program for physicians from any ABMS specialty. Fellows complete the requirements for board certification through the American Board of Preventive Medicine and graduate eligible to sit for the Clinical Informatics subspecialty exam.</p>
+
+          <p>The fellowship is hosted by the Department of Emergency Medicine but draws faculty, rotations, and partnerships from across UC San Diego Health — including the Center for Health Innovation (CHI), the Department of Biomedical Informatics (DBMI), the Center for Healthcare Cybersecurity, and UCSD Health IS operations.</p>
+
+          <h3>What graduates can do</h3>
+          <p>Our fellows leave able to design and lead EHR build work, evaluate and govern clinical AI models, run formal Lean improvement projects as Black Belt project leaders, conduct usability and workflow analyses, and step into informatics leadership roles — CMIO track, vendor-side informatics, academic CI, or operational CI in a health system.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="ascii-box">
+<span class="h">// fellowship.config</span>
+program_type     <span style="color:var(--text)">ACGME subspecialty</span>
+years            <span style="color:var(--text)">2</span>
+positions/year   <span style="color:var(--text)">2</span>
+prereq           <span style="color:var(--text)">any ABMS</span>
+                 <span style="color:var(--text)">residency</span>
+boards           <span style="color:var(--text)">ABPM</span>
+location         <span style="color:var(--text)">San Diego, CA</span>
+hospitals        <span style="color:var(--text)">3 acute care</span>
+clinic_sites     <span style="color:var(--text)">40 outpatient</span>
+host_dept        <span style="color:var(--text)">Emergency Med.</span>
+partners         <span style="color:var(--text)">CHI, DBMI,</span>
+                 <span style="color:var(--text)">Ctr. for Healthcare</span>
+                 <span style="color:var(--text)">Cybersecurity,</span>
+                 <span style="color:var(--text)">UCSD Health IS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 02 — Accreditation -->
+<section class="curr" style="padding-top:0;padding-bottom:80px">
+  <div class="container">
+    <div class="section-ribbon"><span class="n">§02</span> <span class="label">Accreditation &amp; board eligibility</span></div>
+
+    <div class="two-col">
+      <div>
+        <h3 style="color:var(--text);font-size:28px;font-weight:600;letter-spacing:-0.015em;margin:0 0 18px">A formal medical subspecialty since 2011.</h3>
+        <div class="prose">
+          <p>Clinical Informatics was recognized as a board-certified subspecialty by the ABMS in 2011, with the first board exam administered in 2013 and the first ACGME-accredited fellowship programs in 2014. The UCSD program is one of 60+ accredited programs in the country.</p>
+          <p>The fellowship is open to physicians from <strong>any ABMS specialty</strong> who have completed a primary residency. Fellows complete certification through the American Board of Preventive Medicine (ABPM).</p>
+          <p>The practice-pathway window for board certification has closed — fellowship training is now the only route to subspecialty certification. This is a one-way door, and it's why the fellowship matters more than it used to.</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="card" style="padding:28px">
+          <div class="kicker" style="margin-bottom:18px">// certification.path</div>
+          <div class="timeline">
+            <div class="tl-step done">
+              <div class="dot"></div>
+              <div class="body">
+                <div class="when">2011</div>
+                <h4>ABMS recognition</h4>
+                <p>Clinical Informatics formally recognized as a subspecialty.</p>
+              </div>
+            </div>
+            <div class="tl-step done">
+              <div class="dot"></div>
+              <div class="body">
+                <div class="when">2013</div>
+                <h4>First board exam</h4>
+                <p>Administered by ABPM.</p>
+              </div>
+            </div>
+            <div class="tl-step done">
+              <div class="dot"></div>
+              <div class="body">
+                <div class="when">2014</div>
+                <h4>First ACGME programs</h4>
+                <p>The fellowship pathway becomes available.</p>
+              </div>
+            </div>
+            <div class="tl-step done">
+              <div class="dot"></div>
+              <div class="body">
+                <div class="when">2025</div>
+                <h4>Practice pathway closes</h4>
+                <p>Fellowship training is now the only route to certification.</p>
+              </div>
+            </div>
+            <div class="tl-step now">
+              <div class="dot"></div>
+              <div class="body">
+                <div class="when">Today</div>
+                <h4>You apply</h4>
+                <p>ERAS opens July 2026. AMIA match in fall.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 05 — Institutional Context -->
+<section class="curr" style="padding-top:0;padding-bottom:80px">
+  <div class="container">
+    <div class="section-ribbon"><span class="n">§03</span> <span class="label">Institutional context</span></div>
+
+    <div class="prose" style="margin-bottom:32px">
+      <p class="lead">The fellowship sits at the intersection of four institutions that don't always overlap this cleanly elsewhere.</p>
+    </div>
+
+    <div class="card-grid cols-2">
+      <div class="card" style="padding:28px">
+        <div class="kicker">UCSD Health</div>
+        <h4>The operational substrate</h4>
+        <p>Three acute care hospitals — <strong>Jacobs Medical Center</strong> (La Jolla), <strong>Hillcrest Medical Center</strong> (Hillcrest), <strong>East Campus Medical Center</strong> (La Mesa) — plus 40 outpatient clinic sites across San Diego County. Epic-based, with the full enterprise stack — Bridges interfaces, Reporting Workbench, Tapestry, Beacon. Active CMIO office and IT governance.</p>
+        <div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);letter-spacing:0.04em">
+          <span style="color:var(--accent)">→</span> Where fellows build
+        </div>
+      </div>
+
+      <div class="card" style="padding:28px;background:linear-gradient(135deg,rgba(255,205,0,0.06),rgba(16,26,54,0.4));border-color:rgba(255,205,0,0.25)">
+        <div class="kicker">★ Center for Health Innovation</div>
+        <h4>The AI/ML research home</h4>
+        <p>UCSD's institutional home for health AI/ML research, governance, and clinical deployment. Fellows embed directly with the CHI team. Active portfolio across imaging, ambient documentation, sepsis prediction, and clinical decision augmentation.</p>
+        <div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);letter-spacing:0.04em">
+          <span style="color:var(--accent)">→</span> Where clinical AI ships
+        </div>
+      </div>
+
+      <div class="card" style="padding:28px">
+        <div class="kicker">DBMI</div>
+        <h4>The research-track partner</h4>
+        <p>UCSD's Department of Biomedical Informatics. NLM-funded informatics training programs, faculty collaborations for fellows pursuing research projects, and shared seminar access throughout the fellowship.</p>
+        <div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);letter-spacing:0.04em">
+          <span style="color:var(--accent)">→</span> Where research scales
+        </div>
+      </div>
+
+      <div class="card" style="padding:28px">
+        <div class="kicker">Center for Healthcare Cybersecurity</div>
+        <h4>The cybersecurity partner</h4>
+        <p>UCSD's <a href="https://cyberhealth.ucsd.edu" target="_blank" rel="noopener" style="color:var(--accent)">Center for Healthcare Cybersecurity</a> studies the clinical impact of cyberattacks — ransomware, medical-device and EHR vulnerabilities, and downtime resilience — and runs high-fidelity attack simulations. Fellows can engage its faculty on the safety side of health IT.</p>
+        <div style="margin-top:18px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);letter-spacing:0.04em">
+          <span style="color:var(--accent)">→</span> Where safety meets security
+        </div>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:32px">
+      <div class="lbl">Note</div>
+      <div>The fellowship is administratively hosted by the <strong>Department of Emergency Medicine</strong> — reflecting both its origin and the strong EM-informatics tradition at UCSD — but accepts fellows from any ABMS specialty. Internal Medicine, Pediatrics, Surgery, Pathology, Radiology, Family Medicine, Anesthesiology — all are welcome and have completed the program.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 06 — Outcomes -->
+<section class="curr" style="padding-top:0;padding-bottom:80px">
+  <div class="container">
+    <div class="section-ribbon"><span class="n">§04</span> <span class="label">What graduates do next</span></div>
+
+    <div class="two-col">
+      <div>
+        <h3 style="color:var(--text);font-size:28px;font-weight:600;letter-spacing:-0.015em;margin:0 0 18px">Three trajectories. Open optionality.</h3>
+        <div class="prose">
+          <p>The fellowship deliberately develops fellows along three career trajectories simultaneously, so graduating fellows don't have to choose at the start of training.</p>
+          <ul>
+            <li><strong>Operational CI / CMIO track.</strong> Health-system informatics leadership — directing build governance, leading EHR transitions, running CDS programs. Many graduates step into Associate CMIO or Director of CI roles.</li>
+            <li><strong>Academic / research CI.</strong> Faculty positions combining clinical practice, informatics research, and trainee education. DBMI collaborations and CHI projects produce publishable work during fellowship.</li>
+            <li><strong>Industry CI.</strong> Vendor-side (Epic, Oracle Health), digital-health startups, consulting. Dedicated Year II exposure to the health-IT landscape gives fellows a direct line into industry career paths.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="notice">
+          <div class="lbl">// pending</div>
+          <div>Specific graduate outcomes will be tied to named alumni once the program office confirms the alumni roster. See <a href="people.html">People</a>
+      <a href="research.html">Research</a> for graduate placements as they're added.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY CTA -->
+<section id="apply" class="apply">
+  <div class="apply-inner">
+    <div>
+      <div class="hero-eyebrow" style="margin-bottom:18px"><span class="dot"></span> AY 2026–27 · Applications Open</div>
+      <h2>Ready to <span class="serif">build</span> with us?</h2>
+      <p>An ACGME-accredited two-year program built around real clinical AI work in San Diego. Start your ERAS application, or reach out with questions.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="apply.html">Start ERAS application <span class="arr">→</span></a>
+        <a class="btn" href="san-diego.html">Life in San Diego</a>
+      </div>
+    </div>
+    <div class="apply-meta">
+      <div class="r"><div class="k">Application</div><div class="v">ERAS · <span class="gold">opens July 2026</span></div></div>
+      <div class="r"><div class="k">Match</div><div class="v">AMIA · Fall 2026</div></div>
+      <div class="r"><div class="k">Positions</div><div class="v">2 per academic year</div></div>
+      <div class="r"><div class="k">Eligibility</div><div class="v">Any ABMS specialty</div></div>
+      <div class="r"><div class="k">Start</div><div class="v">July 1, 2027</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <img src="assets/cf-patch.jpg" alt="" style="width:52px;border-radius:5px">
+        <div class="brand-text">
+          <div class="l1">UC San Diego School of Medicine</div>
+          <div class="l2">Clinical Informatics Fellowship</div>
+        </div>
+      </div>
+      <div style="color:var(--text-faint);font-size:12px;line-height:1.6;max-width:300px">
+        ACGME-accredited subspecialty fellowship in clinical informatics. Department of Emergency Medicine, UC San Diego School of Medicine.
+      </div>
+    </div>
+    <div><h4>Program</h4><ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="people.html">People</a></li>
+  <li><a href="research.html">Research</a></li>
+  <li><a href="san-diego.html">Life in SD</a></li>
+  <li><a href="apply.html">Apply</a></li>
+</ul></div>
+<div><h4>Resources</h4><ul>
+  <li><a href="https://www.acgme.org" target="_blank" rel="noopener">ACGME</a></li>
+  <li><a href="https://www.theabpm.org/become-certified/subspecialties/clinical-informatics/" target="_blank" rel="noopener">ABPM</a></li>
+  <li><a href="https://amia.org/membership/academic-forum/amia-clinical-informatics-fellowship-match" target="_blank" rel="noopener">AMIA Match</a></li>
+  <li><a href="https://myeras.aamc.org/myeras-web/#/landing" target="_blank" rel="noopener">ERAS</a></li>
+</ul></div>
+<div><h4>UC San Diego</h4><ul>
+  <li><a href="https://medschool.ucsd.edu" target="_blank" rel="noopener">School of Medicine</a></li>
+  <li><a href="https://health.ucsd.edu" target="_blank" rel="noopener">UC San Diego Health</a></li>
+  <li><a href="https://emergencymed.ucsd.edu" target="_blank" rel="noopener">Dept. of Emergency Medicine</a></li>
+  <li><a href="https://dbmi.ucsd.edu" target="_blank" rel="noopener">Dept. of Biomedical Informatics</a></li>
+  <li><a href="https://healthinnovation.ucsd.edu" target="_blank" rel="noopener">Jacobs Center for Health Innovation</a></li>
+  <li><a href="https://cyberhealth.ucsd.edu" target="_blank" rel="noopener">Center for Healthcare Cybersecurity</a></li>
+</ul></div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 The Regents of the University of California</div>
+    <div>// build · v3.0.1 · last updated 2026.05.26</div>
+  </div>
+</footer>
+
+<script src="assets/js/tweaks.js"></script>
+</body>
+</html>

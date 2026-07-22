@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Research — UC San Diego Clinical Informatics Fellowship</title>
+<meta name="description" content="Selected peer-reviewed publications from program and core faculty of the UCSD Clinical Informatics Fellowship.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* large faculty profile card */
+  .fac-profile{
+    display:grid;grid-template-columns:280px 1fr;gap:32px;
+    border:1px solid var(--line);border-radius:14px;background:rgba(16,26,54,0.35);
+    padding:24px;align-items:start;
+    transition:all .2s;
+  }
+  .fac-profile:hover{border-color:var(--line-strong)}
+  .fac-profile .ph{aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:#1a2440;position:relative}
+  .fac-profile .ph img{width:100%;height:100%;object-fit:cover;filter:saturate(0.95) contrast(1.04)}
+  .fac-profile .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 65%,rgba(7,11,24,0.6));pointer-events:none}
+  .fac-profile .body{display:flex;flex-direction:column;height:100%}
+  .fac-profile .role{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px}
+  .fac-profile h3{margin:0 0 6px;font-size:24px;font-weight:600;color:var(--text);letter-spacing:-0.01em}
+  .fac-profile .pos{font-size:14px;color:var(--text-dim);margin-bottom:18px;line-height:1.45}
+  .fac-profile .pos a{color:var(--accent);text-decoration:none}
+  .fac-profile .pos a:hover{text-decoration:underline}
+  a.cf-email{color:var(--accent);text-decoration:none}
+  .fac-profile .bio{font-size:14.5px;color:var(--text-dim);line-height:1.6;margin:0 0 18px;max-width:680px}
+  .fac-profile .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+  .fac-profile .tags .t{
+    font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-dim);
+    padding:4px 9px;border:1px solid var(--line);border-radius:999px;letter-spacing:0.04em;
+  }
+  .fac-profile .tags .t.gold{color:var(--accent);border-color:rgba(255,205,0,0.3)}
+
+  /* small directory rows */
+  .dir-row{
+    display:grid;grid-template-columns:48px 1fr 1fr 80px;gap:18px;
+    padding:18px 0;border-bottom:1px solid var(--line);align-items:center;
+    transition:padding-left .15s;
+  }
+  .dir-row:hover{padding-left:6px}
+  .dir-row .dot-img{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#1a2440,#0d4a7c);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);overflow:hidden}
+  .dir-row .dot-img img{width:100%;height:100%;object-fit:cover}
+  .dir-row .nm{font-size:15px;font-weight:600;color:var(--text)}
+  .dir-row .pos{font-size:13px;color:var(--text-dim)}
+  .dir-row .yr{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);text-align:right;letter-spacing:0.04em}
+
+  /* fellow placeholder card */
+  .fellow{
+    background:rgba(16,26,54,0.35);border:1px dashed rgba(255,255,255,0.12);
+    border-radius:12px;padding:20px;display:grid;grid-template-columns:60px 1fr;gap:14px;
+    transition:all .2s;align-items:start;
+  }
+  .fellow:hover{border-color:rgba(255,205,0,0.3);background:rgba(16,26,54,0.5)}
+  .fellow .ph{aspect-ratio:1/1;border-radius:50%;background:linear-gradient(135deg,#1a2440,#0d4a7c);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);font-weight:600;border:1px solid var(--line)}
+  .fellow .meta{padding-top:4px}
+  .fellow .yr{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px}
+  .fellow .nm{font-size:15px;color:var(--text);font-weight:500;margin-bottom:4px}
+  .fellow .res{font-size:12.5px;color:var(--text-dim);line-height:1.4}
+  .fellow.placeholder .nm{color:var(--text-faint);font-style:italic}
+  .fellow.placeholder .ph{color:var(--text-faint)}
+
+  /* alumni outcomes strip */
+  .outcome-card{
+    background:rgba(16,26,54,0.35);border:1px solid var(--line);border-radius:12px;
+    padding:24px;display:flex;flex-direction:column;gap:10px;
+  }
+  .outcome-card .kicker{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase}
+  .outcome-card .role{font-size:14px;color:var(--text);font-weight:500;line-height:1.3}
+  .outcome-card .where{font-size:13px;color:var(--text-dim);line-height:1.4}
+
+  /* alumni directory */
+  .alum-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+  .alum{display:grid;grid-template-columns:210px 92px 1fr;gap:22px;align-items:baseline;padding:16px 2px;border-bottom:1px solid var(--line);transition:padding-left .15s,background .15s}
+  .alum:hover{padding-left:8px;background:rgba(16,26,54,0.35)}
+  .alum .nm{font-size:15.5px;font-weight:600;color:var(--text);letter-spacing:-0.005em}
+  .alum .yr{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:0.04em;white-space:nowrap}
+  .alum .now{font-size:13.5px;color:var(--text-dim);line-height:1.5}
+  .alum .now .role{color:var(--text);font-weight:500}
+  .alum.tbd .now{color:var(--text-faint);font-style:italic}
+
+  /* monogram placeholder for faculty without photo */
+  .fac-profile .ph.mono{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a2440,#0d4a7c);font-family:'JetBrains Mono',monospace;font-size:44px;font-weight:600;color:var(--accent);letter-spacing:0.02em}
+  .fac-profile .ph.mono::after{display:none}
+  .fac-profile .ph.mono img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* publications list */
+  .pub-list{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:12px;background:rgba(16,26,54,0.22);max-height:600px;overflow-y:auto;padding:0 22px;scrollbar-width:thin;scrollbar-color:rgba(255,205,0,0.4) transparent}
+  .pub-list::-webkit-scrollbar{width:9px}
+  .pub-list::-webkit-scrollbar-thumb{background:rgba(255,205,0,0.35);border-radius:5px;border:2px solid transparent;background-clip:padding-box}
+  .pub-list::-webkit-scrollbar-track{background:transparent}
+  .pub-list .pub:last-child{border-bottom:none}
+  .pub-scroll-hint{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-faint);letter-spacing:0.06em;text-align:right;margin-top:10px}
+  .pub{display:grid;grid-template-columns:118px 1fr;gap:22px;padding:18px 0;border-bottom:1px solid var(--line);transition:padding-left .15s}
+  .pub:hover{padding-left:6px}
+  .pub .jrnl{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--accent);letter-spacing:0.05em;text-transform:uppercase;line-height:1.55;padding-top:3px}
+  .pub .jrnl .yr{display:block;color:var(--text-faint)}
+  .pub .t{font-size:15px;color:var(--text);font-weight:500;line-height:1.42;margin-bottom:6px;letter-spacing:-0.005em}
+  .pub .t a{color:var(--text)}
+  .pub .t a:hover{color:var(--accent)}
+  .pub .au{font-size:12.5px;color:var(--text-dim);line-height:1.55}
+  .pub .pmid{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-faint);margin-top:5px;letter-spacing:.3px}
+  .pub .pmid a{color:var(--accent);text-decoration:none}
+  .pub .pmid a:hover{text-decoration:underline}
+  .pub .au b{color:var(--text);font-weight:600}
+  .pub-hero{position:relative;border:1px solid rgba(255,205,0,0.25);border-radius:14px;background:linear-gradient(135deg,rgba(255,205,0,0.07),rgba(16,26,54,0.5));overflow:hidden;margin-bottom:26px}
+  .pub-hero .slide{display:none;padding:26px 30px 8px}
+  .pub-hero .slide.active{display:block}
+  .pub-hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:10px}
+  .pub-hero .slide .t{font-size:19px;font-weight:600;color:var(--text);line-height:1.32;letter-spacing:-0.01em;max-width:820px}
+  .pub-hero .slide .t a{color:var(--text)}
+  .pub-hero .slide .t a:hover{color:var(--accent)}
+  .pub-hero .slide .au{font-size:12.5px;color:var(--text-dim);margin-top:10px}
+  .pub-hero .dots{display:flex;gap:7px;padding:6px 30px 20px}
+  .pub-hero .dot{width:8px;height:8px;border-radius:50%;border:none;background:rgba(255,255,255,0.22);cursor:pointer;padding:0}
+  .pub-hero .dot.on{background:var(--accent)}
+  .pub-controls{display:flex;align-items:center;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+  .pub-controls label{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-dim);letter-spacing:0.08em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+  .pub-controls select{background:rgba(16,26,54,0.7);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:12px;cursor:pointer}
+  .pub-count{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--text-faint);letter-spacing:0.06em}
+  @media (max-width:640px){
+    .fac-profile{grid-template-columns:88px 1fr;gap:16px;padding:18px}
+    .fac-profile .ph{border-radius:8px}
+    .fac-profile h3{font-size:19px}
+    .fac-profile .pos{font-size:13px;margin-bottom:14px}
+    .fac-profile .bio{font-size:14px}
+    .fac-profile .tags{grid-column:1 / -1}
+    .pub{grid-template-columns:1fr;gap:5px;padding:16px 0}
+    .pub .jrnl{padding-top:0}
+    .pub .jrnl .yr{display:inline;margin-left:6px}
+    .pub .t{font-size:14.5px}
+    .pub-hero .slide,.pub-hero .dots{padding-left:20px;padding-right:20px}
+    .pub-hero .slide .t{font-size:16.5px}
+    .dir-row{grid-template-columns:40px 1fr auto;gap:12px}
+    .dir-row .sub{display:none}
+    .alum{grid-template-columns:1fr auto;gap:6px 14px;padding:14px 2px}
+    .alum .now{grid-column:1 / -1}
+    .fellow{grid-template-columns:48px 1fr;padding:16px}
+    .outcome-card{padding:20px}
+  }
+</style>
+</head>
+<body data-screen-label="Research">
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <span><span class="pulse"></span><span class="k">status</span> <span class="v">recruiting · AY 2026–27</span></span>
+      <span><span class="k">cohort</span> <span class="v">2 positions / yr</span></span>
+      <span><span class="k">match</span> <span class="v">AMIA · ERAS</span></span>
+    </div>
+    <div class="topbar-right">
+      <span><span class="k">UCSD Health</span></span>
+      <span><span class="k">Dept. of Emergency Medicine</span></span>
+      <span><span class="k">v3.0</span> <span class="v">2026</span></span>
+    </div>
+  </div>
+</div>
+
+<nav class="main">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/cf-patch.jpg" alt="UCSD Clinical Informatics Fellowship">
+      <div class="brand-text">
+        <div class="l1">UC San Diego School of Medicine</div>
+        <div class="l2">Clinical Informatics Fellowship</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="people.html">People</a>
+      <a href="research.html" class="active">Research</a>
+      <a href="san-diego.html">Life in SD</a>
+      <a href="apply.html">Apply</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn primary" href="apply.html">Apply via ERAS <span class="arr">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-row" style="align-items:stretch">
+    <div>
+      <div class="crumbs"><a href="index.html">Home</a><span class="sep">/</span><span>Research</span></div>
+      <h1>The work, on <span class="serif">the record.</span></h1>
+      <p class="lede">Recent peer-reviewed work from program and core faculty &mdash; clinical AI evaluation, EHR usability, quality improvement, operational informatics, and healthcare cybersecurity. Every entry links to its PubMed record.</p>
+    </div>
+    <div class="pub-hero" id="pubHero" aria-label="Highlighted publications" style="margin-bottom:0;display:flex;flex-direction:column;justify-content:center"></div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="curr" style="padding-bottom:80px">
+  <div class="container">
+    <div class="section-ribbon"><span class="n">§01</span> <span class="label">Selected publications</span></div>
+
+    <p class="prose lead" style="margin-bottom:24px">Recent peer-reviewed work from program and core faculty &mdash; clinical AI evaluation, EHR usability, quality improvement, operational informatics, and healthcare cybersecurity. Use the year filter to browse the full list. Faculty names are in <b style="color:var(--text)">bold</b>.</p>
+
+    <div class="pub-controls">
+      <label>Filter by year
+        <select id="pubYear"></select>
+      </label>
+      <span class="pub-count"></span>
+    </div>
+
+    <div class="pub-list" id="pubList"></div>
+    <div class="pub-scroll-hint">scroll within frame for the full list ↓</div>
+
+    <div class="notice" style="margin-top:24px">
+      <div class="lbl">// Source</div>
+      <div>Curated by intersecting the <a href="https://dbmi.ucsd.edu/research/publications.html" target="_blank" rel="noopener">UC San Diego Biomedical Informatics selected-publications feed</a> and UCSD Profiles (MEDLINE/PubMed) with the program and core faculty roster. Each entry links to its PubMed record by PMID. This is a representative selection, not a complete bibliography.</div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply" class="apply">
+  <div class="apply-inner">
+    <div>
+      <div class="hero-eyebrow" style="margin-bottom:18px"><span class="dot"></span> AY 2026–27 · Applications Open</div>
+      <h2>Want to <span class="serif">meet us?</span></h2>
+      <p>Interviews happen in the fall after ERAS opens. Questions before then? Reach the program coordinator.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="https://myeras.aamc.org/myeras-web/#/landing" target="_blank" rel="noopener">Start ERAS application <span class="arr">→</span></a>
+        <a class="btn" href="apply.html#contact">Contact the program</a>
+      </div>
+    </div>
+    <div class="apply-meta">
+      <div class="r"><div class="k">Application</div><div class="v">ERAS · <span class="gold">opens July 2026</span></div></div>
+      <div class="r"><div class="k">Match</div><div class="v">AMIA · Fall 2026</div></div>
+      <div class="r"><div class="k">Positions</div><div class="v">2 per academic year</div></div>
+      <div class="r"><div class="k">Eligibility</div><div class="v">Any ABMS specialty</div></div>
+      <div class="r"><div class="k">Start</div><div class="v">July 1, 2027</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div>
+      <div class="brand" style="margin-bottom:14px">
+        <img src="assets/cf-patch.jpg" alt="" style="width:52px;border-radius:5px">
+        <div class="brand-text">
+          <div class="l1">UC San Diego School of Medicine</div>
+          <div class="l2">Clinical Informatics Fellowship</div>
+        </div>
+      </div>
+      <div style="color:var(--text-faint);font-size:12px;line-height:1.6;max-width:300px">ACGME-accredited subspecialty fellowship. Department of Emergency Medicine, UC San Diego School of Medicine.</div>
+      <div class="foot-social">
+        <a href="https://x.com/UCSDCIFellows" target="_blank" rel="noopener" aria-label="X (@UCSDCIFellows)"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.66l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231 5.45-6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://www.instagram.com/ucsd_ci_fellowship" target="_blank" rel="noopener" aria-label="Instagram (@ucsd_ci_fellowship)"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+    <div><h4>Program</h4><ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="people.html">People</a></li>
+  <li><a href="research.html">Research</a></li>
+  <li><a href="san-diego.html">Life in SD</a></li>
+  <li><a href="apply.html">Apply</a></li>
+</ul></div>
+<div><h4>Resources</h4><ul>
+  <li><a href="https://www.acgme.org" target="_blank" rel="noopener">ACGME</a></li>
+  <li><a href="https://www.theabpm.org/become-certified/subspecialties/clinical-informatics/" target="_blank" rel="noopener">ABPM</a></li>
+  <li><a href="https://amia.org/membership/academic-forum/amia-clinical-informatics-fellowship-match" target="_blank" rel="noopener">AMIA Match</a></li>
+  <li><a href="https://myeras.aamc.org/myeras-web/#/landing" target="_blank" rel="noopener">ERAS</a></li>
+</ul></div>
+<div><h4>UC San Diego</h4><ul>
+  <li><a href="https://medschool.ucsd.edu" target="_blank" rel="noopener">School of Medicine</a></li>
+  <li><a href="https://health.ucsd.edu" target="_blank" rel="noopener">UC San Diego Health</a></li>
+  <li><a href="https://emergencymed.ucsd.edu" target="_blank" rel="noopener">Dept. of Emergency Medicine</a></li>
+  <li><a href="https://dbmi.ucsd.edu" target="_blank" rel="noopener">Dept. of Biomedical Informatics</a></li>
+  <li><a href="https://healthinnovation.ucsd.edu" target="_blank" rel="noopener">Jacobs Center for Health Innovation</a></li>
+  <li><a href="https://cyberhealth.ucsd.edu" target="_blank" rel="noopener">Center for Healthcare Cybersecurity</a></li>
+</ul></div>
+  </div>
+  <div class="foot-bottom">
+    <div>© 2026 The Regents of the University of California</div>
+    <div>// build · v3.0.1 · last updated 2026.05.26</div>
+  </div>
+</footer>
+
+<script src="assets/data/publications.js"></script>
+<script>
+document.querySelectorAll('.cf-email').forEach(function(a){var e=a.getAttribute('data-e');if(e){try{e=atob(e);a.href='mailto:'+e;a.textContent=e;}catch(x){}}});
+(function(){
+  var DATA=(window.PUBLICATIONS||[]);
+  function url(p){return 'https://pubmed.ncbi.nlm.nih.gov/'+p.pmid+'/';}
+  var hero=document.getElementById('pubHero');
+  if(hero){
+    var hi=DATA.filter(function(p){return p.highlight;}).sort(function(a,b){return (a.highlight.order||0)-(b.highlight.order||0);});
+    if(hi.length){
+      var slides=hi.map(function(p,n){
+        return '<div class="slide'+(n===0?' active':'')+'"><div class="eyebrow">'+p.highlight.venue+'</div>'+
+          '<div class="t"><a href="'+url(p)+'" target="_blank" rel="noopener">'+p.title+'</a></div>'+
+          '<div class="au">'+(p.highlight.authors||p.authors)+'</div></div>';
+      }).join('');
+      var dots='<div class="dots">'+hi.map(function(p,n){return '<button class="dot'+(n===0?' on':'')+'" aria-label="Highlight '+(n+1)+'"></button>';}).join('')+'</div>';
+      hero.innerHTML=slides+dots;
+      var s=[].slice.call(hero.querySelectorAll('.slide')),d=[].slice.call(hero.querySelectorAll('.dot')),i=0,t;
+      function go(n){s[i].classList.remove('active');if(d[i])d[i].classList.remove('on');i=(n+s.length)%s.length;s[i].classList.add('active');if(d[i])d[i].classList.add('on');}
+      d.forEach(function(b,n){b.addEventListener('click',function(){go(n);r();});});
+      function r(){clearInterval(t);t=setInterval(function(){go(i+1);},5000);}
+      if(s.length>1)r();
+    }
+  }
+  var list=document.getElementById('pubList');
+  if(list){
+    list.innerHTML=DATA.map(function(p){
+      return '<div class="pub" data-year="'+p.year+'"><div class="jrnl">'+p.journal+'<span class="yr">'+p.year+'</span></div>'+
+        '<div><div class="t"><a href="'+url(p)+'" target="_blank" rel="noopener">'+p.title+'</a></div>'+
+        '<div class="au">'+p.authors+'</div>'+
+        '<div class="pmid">PMID <a href="'+url(p)+'" target="_blank" rel="noopener">'+p.pmid+'</a></div></div></div>';
+    }).join('');
+  }
+  var sel=document.getElementById('pubYear');
+  if(sel){
+    var years=Array.from(new Set(DATA.map(function(p){return p.year;}))).sort(function(a,b){return b-a;});
+    sel.innerHTML='<option value="all">All years</option>'+years.map(function(y){return '<option value="'+y+'">'+y+'</option>';}).join('');
+  }
+  var p=[].slice.call(document.querySelectorAll('.pub-list .pub')),c=document.querySelector('.pub-count');
+  function apply(){var y=sel?sel.value:'all',n=0;p.forEach(function(x){var sh=(y==='all'||x.getAttribute('data-year')===y);x.style.display=sh?'':'none';if(sh)n++;});if(c)c.textContent=n+(n===1?' publication':' publications');}
+  if(sel)sel.addEventListener('change',apply);
+  apply();
+})();
+</script>
+<script src="assets/js/tweaks.js"></script>
+</body>
+</html>

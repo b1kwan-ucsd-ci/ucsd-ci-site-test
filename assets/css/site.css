@@ -325,6 +325,9 @@ footer{border-top:1px solid var(--line);padding:48px 0 32px;font-size:13px;color
 .foot h4{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;color:var(--text-faint);letter-spacing:0.14em;text-transform:uppercase;margin:0 0 14px}
 .foot ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .foot a:hover{color:var(--accent)}
+.foot-social{display:flex;gap:10px;margin-top:18px}
+.foot-social a{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--line);border-radius:7px;color:var(--text-dim);transition:color .15s,border-color .15s}
+.foot-social a:hover{color:var(--accent);border-color:var(--accent)}
 .foot-bottom{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;color:var(--text-faint);letter-spacing:0.04em;max-width:var(--max);margin:48px auto 0;padding:24px var(--content-pad) 0}
 
 /* ============================================================
