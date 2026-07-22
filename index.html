@@ -289,22 +289,6 @@
   </div>
 </footer>
 
-<!-- HERO LAYOUT TOGGLE (comparison control) -->
-<div class="layout-toggle" role="group" aria-label="Hero layout">
-  <span class="lt-lbl">// hero</span>
-  <button type="button" data-layout="a">Logo-left</button>
-  <button type="button" data-layout="c">Logo-right</button>
-  <button type="button" data-layout="b">Headline-first</button>
-</div>
-<script>(function(){var hero=document.querySelector('.hero'),btns=document.querySelectorAll('.layout-toggle button');function set(v){hero.classList.toggle('hero-b',v==='b');hero.classList.toggle('hero-c',v==='c');btns.forEach(function(b){b.classList.toggle('on',b.dataset.layout===v);});try{localStorage.setItem('ci_hero_layout',v);}catch(e){}}btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.layout);});});var saved='a';try{saved=localStorage.getItem('ci_hero_layout')||'a';}catch(e){}set(saved);})();</script>
-<!-- HERO LAYOUT TOGGLE (comparison control) -->
-<div class="layout-toggle" role="group" aria-label="Hero layout">
-  <span class="lt-lbl">// hero</span>
-  <button type="button" data-layout="a">Logo-left</button>
-  <button type="button" data-layout="c">Logo-right</button>
-  <button type="button" data-layout="b">Headline-first</button>
-</div>
-<script>(function(){var hero=document.querySelector('.hero'),btns=document.querySelectorAll('.layout-toggle button');function set(v){hero.classList.toggle('hero-b',v==='b');hero.classList.toggle('hero-c',v==='c');btns.forEach(function(b){b.classList.toggle('on',b.dataset.layout===v);});try{localStorage.setItem('ci_hero_layout',v);}catch(e){}}btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.layout);});});var saved='a';try{saved=localStorage.getItem('ci_hero_layout')||'a';}catch(e){}set(saved);})();</script>
 <script>(function(){var f=document.querySelectorAll('.sd-rotator .rot-frame');if(f.length>1){var i=0;setInterval(function(){f[i].classList.remove('active');i=(i+1)%f.length;f[i].classList.add('active');},3500);}})();</script>
 <script src="assets/js/tweaks.js"></script>
 </body>
